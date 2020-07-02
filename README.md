@@ -8,6 +8,7 @@
 ##B. Key Assumptions / Method for ETL
 1. Inspect and filter data
 	- example alternat title and condensing thevarious columns
+	- unique id for data sets
 2. Duplicates ar common, remove them as part of the cleaning process
 	- Use regular expression to filter
 	- drop duplicates
@@ -24,9 +25,11 @@ them to the correct exprssion
 
 6. Merging databases
 	- list column by column to merge across the databases
+	- get columns in conssitent style [e.g budget, box ofice data...]
 	- option 1 :clean up columns and merge the best of each
 	- option 2 :if there is much cleaner column, use that and drop the other.
 		- sometimes you can plot the column against each other to see the skew and make decisions
+		- look for outliers and eliminate columns with too many outliere or not correctable.
 7. uploading to sql
         - create a connection string to access to database
 	- use pandas to_sql to connect and ceate. This connection object is used to load columns and data.
